@@ -1,0 +1,21 @@
+var lang_strings = {
+	'Norway': 'Norvège',
+	'Bicycle': 'Vélo',
+	'Topo': 'Topographique',
+	'Public transport': 'Transport en commun',
+	'General': 'Général',
+	'Spain': 'Espagne',
+	'France': 'France',
+	'Australia': 'Australie',
+	'New Zealand': 'Nouvelle-Zélande',
+	'Sweden': 'Suède',
+	'Finland': 'Finlande',
+	'Denmark': 'Danemark',
+	'Decorative': 'Décoratif',
+	'ESRI World topo': 'Topo mondial ESRI',
+	'ESRI World imagery': 'Imagerie mondiale ESRI',
+	'ESRI Roads map': 'Carte routière ESRI',
+	'Stamen Watercolor': 'Stamen Aquarelle',
+	'HERE Hybrid': 'HERE Hybride',
+	'HERE Public transport': 'HERE Transport en commun'
+};

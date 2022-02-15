@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Cartes - KD2.org</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="stylesheet" type="text/css" href="../leaflet/leaflet.css" media="screen, projection, handheld" />
+	<link rel="shortcut icon" href="map.png" />
+
+	<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	html, body {
+		height: 100%;
+		overflow: hidden;
+	}
+
+	body {
+		background: transparent;
+		position: relative;
+	}
+
+	#map {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
+	}
+
+	.label {
+		white-space: pre;
+		text-shadow: 2px 2px 2px #fff, -2px -2px 2px #fff, -2px 2px 2px #fff, 2px -2px 2px #fff, 0px 0px 5px #fff;
+	}
+	</style>
+</head>
+
+<body>
+
+<div id="mapContainer">
+	<div id="map">
+		<noscript>
+			<p class="error">Cette carte ne s'affiche qu'avec Javascript activé.</p>
+		</noscript>
+	</div>
+</div>
+
+<script src="../leaflet/leaflet-src.js" type="text/javascript" charset="utf-8"></script>
+<script src="../map.providers.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="map.js"></script>
+
+</body>
+</html>

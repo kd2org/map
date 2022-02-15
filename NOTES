@@ -1,0 +1,35 @@
+TODO :
+* Choix couleur tracé à l'export
+* Prévisu taille carte export et choix taille carte
+
+* Edition des points des tracés
+* Création de tracés
+* Suppression de tracés
+
+* Sauvegarde/restauration locale des sessions (tracés et points)
+
+* Import GPX avancé : waypoints, style des tracés, icônes
+* Export GPX
+    - Stocker style des tracés
+    - Stocker icônes des waypoints
+
+* Export mbtiles
+* Export image
+* Impression
+
+* Bouton "ouvrir dans OSM" / éditer dans OSM / ouvrir sur HERE / ouvrir sur GMaps
+* Bouton permalien pour partager la position sur la carte
+
+* Simplification des tracés GPS
+
+* Recherche d'adresse avec liste de choix
+* Routage via OSRM/YOURS
+
+* Colorisation du tracé selon la pente (inspiré de https://iosphere.github.io/Leaflet.hotline/demo/) en ayant une couleur différente lors des descentes (à la OruxMaps ?)
+
+* Possibilité d'utiliser des cartes vectorielles : https://gitlab.com/jkuebart/Leaflet.VectorTileLayer/ (EOTopo, MAPBox)
+* Télécharger des cartes vecto en MBTiles pour usage offline ! https://gis.stackexchange.com/questions/217704/vector-tile-formats-vector-mbtiles-and-mvf/217836 (sous Android il y a cette lib : http://mousebird.github.io/WhirlyGlobe/ )
+* Profil coloré : https://github.com/GIScience/Leaflet.Heightgraph
+
+Lisser les traces GPS :
+https://www.gpsvisualizer.com/tutorials/elevation_gain.html

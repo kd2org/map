@@ -1,0 +1,222 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+        margin:0;
+        padding:0;
+}
+table {
+        border-collapse:collapse;
+        border-spacing:0;
+}
+fieldset,img {
+        border:0;
+}
+ol,ul {
+        list-style:none;
+}
+caption,th {
+        text-align:left;
+}
+h1,h2,h3,h4,h5,h6,h3.spip {
+        font-size: 100%;
+}
+abbr,acronym {
+        border: none;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+        display: block;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 12px;
+}
+#head {
+    width: 100%;
+    height: 80px;
+    border-bottom: 2px solid #000;
+    position: relative;
+}
+#head h1 {
+    width: 240px;
+    height: 100%;
+    font-size: 1em;
+    float: left;
+    margin: 0 1em;
+}
+#head h1 a {
+    width: 100%;
+    height: 100%;
+    text-indent: -70em;
+    background: no-repeat url("pics/logo_header.png") 0px 0px;
+    display: block;
+}
+#head h2 {
+    position: absolute;
+    top: 8px;
+    left: 20px;
+    width: 70px;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+#head h2 a {
+    color: #000;
+    text-decoration: none;
+}
+#head ul {
+    list-style-type: none;
+    display: table;
+    height: 100%;
+}
+#head li {
+    display: table-cell;
+    vertical-align: bottom;
+    padding: 0.5em;
+    padding-bottom: 0.2em;
+    font-size: 1.4em;
+}
+#head li a {
+    color: #000;
+    border: 2px solid #ccc;
+    background: #eee;
+    color: #666;
+    border-bottom: none;
+    border-radius: 0.5em 0.5em 0 0;
+    padding: 0.2em 0.5em;
+}
+#head li.current a {
+    border-color: #999;
+    color: #000;
+}
+#head li a:hover {
+    color: blue;
+    background: #fff;
+}
+.page {
+    padding: 1em;
+}
+fieldset {
+    border: 1px solid #ccc;
+    padding: 0.5em;
+    margin-bottom: 1em;
+}
+fieldset legend {
+    font-size: 0.9em;
+    padding: 0 1em;
+    color: #666;
+}
+/*
+form.login {
+    width: 25%;
+    float: right;
+    margin-left: 1em;
+}
+.login .error {
+    color: red;
+    text-align: center;
+}
+.login dt {
+    width: 35%;
+    float: left;
+    clear: left;
+    margin: 0.4em 0;
+}
+.login dd {
+    width: 64%;
+    float: left;
+    margin: 0.2em 0;
+}
+.login #f_login, .login #f_password {
+    border: 1px solid #999;
+    border-radius: 5px;
+    padding: 0.2em;
+    width: 99%;
+}
+.login .submit { clear: both; }
+.login .submit input {
+    width: 45%;
+    margin: 0.3em 2.5%;
+    font-size: 1em;
+}
+.header { border-bottom: 1px solid #ccc; text-align: right; margin-bottom: 1em; padding: 0.5em; }
+.header a { color: black; }
+.header a.logout { color: darkred; }
+*/
+
+.page .content {
+    margin: 1em;
+}
+
+.page .content h3, .page .content h4, .page .content ul, .page .content ol, .page .content p {
+    margin-bottom: 0.8em;
+}
+
+.page .content ul, .page .content ol {
+    padding-left: 2em;
+}
+
+.page .content ul {
+    list-style-type: disc;
+}
+
+.page .content ol {
+    list-style-type: decimal;
+}
+
+.page .content h1 { font-size: 180%; }
+.page .content h2 { font-size: 150%; }
+.page .content h3 { font-size: 120%; }
+.page .content h4 { font-size: 100%; }
+.page .content h5 { font-size: 90%; }
+.page .content h6 { font-size: 80%; }
+
+.page .content li { margin-bottom: .2em; }
+
+@media screen and (max-width: 970px), handheld {
+    #head {
+        position: static;
+        height: auto;
+        width: 100%;
+        border: none;
+    }
+    #head h1 a {
+        background: no-repeat url("pics/logo_header_small.png") 2px 0px;
+        width: 120px;
+    }
+    #head h1 {
+        height: 40px;
+        border-bottom: 2px solid #000;
+        float: none;
+        margin: 0 auto;
+        width: 100%;
+    }
+    #head h2 {
+        left: 110px;
+        top: 22px;
+    }
+    #head ul {
+        display: block;
+        clear: both;
+    }
+    #head li {
+        display: inline-block;
+        font-size: .9em;
+        padding: 2px 5px 2px 5px;
+    }
+    #head li a {
+        border: 2px solid #ccc;
+        background: #eee;
+        color: #666;
+        border-top: none;
+        border-radius: 0 0 0.5em 0.5em;
+        padding: 0.2em 0.5em;
+    }
+    #head li.current a {
+        border-color: #999;
+        color: #000;
+    }
+   .page .content { margin: 0px; }
+    .page { padding: 0.5em; }
+}

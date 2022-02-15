@@ -1,0 +1,79 @@
+body, section, dl, dt, dd {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Sans-serif;
+	font-size: 9pt;
+}
+
+section {
+}
+
+dl dt {
+	margin-left: .5em;
+}
+
+dl dd {
+	margin: .5em;
+	margin-left: 1em;
+}
+
+b, i {
+	font-weight: normal;
+	font-style: normal;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 .5em;
+}
+
+img {
+	vertical-align: middle;
+}
+
+.locality {
+	color: #333380;
+	font-weight: bold;
+	font-size: 1.4em;
+}
+
+.suburb {
+	color: #5555AA;
+	font-style: italic;
+	font-size: 1.1em;
+}
+
+.peak {
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+.alpine_hut, .alpine_hut_private, .wilderness_hut, .wilderness_hut_private {
+	color: #0092DA;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+.alpine_hut {
+	color: #DD0000;
+}
+
+.tracks dt u {
+	text-decoration: none;
+	border-bottom: 4px solid #ccc;
+	display: inline-block;
+}
+
+.tracks dt.unknown u {
+	border-color: #9C6800;
+	margin-right: 1px;
+	width: 12px;
+}
+
+.tracks dt.footway u {
+	border-color: #888888;
+	margin-right: 1px;
+	width: 12px;
+}
