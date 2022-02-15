@@ -9,8 +9,10 @@ Ceci est un outil de cartographie pour la randonnée, permettant de :
 * ajouter des marqueurs sur les cartes
 * enregistrer les données ajoutées sur la carte en GPX
 * fusionner des traces et routes GPX (charger plusieurs traces sur la carte, puis enregistrer)
-* sauvegarde de la carte visible en fichier MBTiles à plusieurs niveaux de zoom
+* sauvegarde de la carte visible en fichier MBTiles à plusieurs niveaux de zoom (ne fonctionne qu'avec les fournisseurs qui fournissent un entête HTTP `access-control-allow-origin: *`)
 * profil altimétrique des traces GPX affichées
+* export HTML de la carte visualisée, avec les tracés dessus
+* mesure de distance sur la carte
 
 ## Installation
 
@@ -39,7 +41,6 @@ Vous pouvez réutiliser ces modules sous licence LGPL, n'oubliez juste pas de re
 * Pouvoir choisir la couleur d'un tracé ou d'une route GPX
 * Export de carte avec les tracés et marqueurs en image
 * Export MBTiles: Prévisualisation d'une tuile pour indiquer le niveau de zoom, dans la sélection de niveaux de zoom
-* Export MBTiles: Mettre à jour le décompte de tuiles quand on change la vue (zoom, pan)
 * Création de tracé sur la carte
 * Modification des tracés sur la carte
 * Suppression d'un seul tracé de la carte

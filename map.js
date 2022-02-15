@@ -330,7 +330,7 @@ var SQL;
 				exportTiles(zooms);
 				return false;
 			};
-			f.innerHTML = `<h3>Zooms à télécharger</h3>`;
+			f.innerHTML = `<h3>Zooms à télécharger (actuellement affiché : <span id="tile_zoom"></span>)</h3>`;
 
 			let min = Math.max(map.getMinZoom(), 6);
 			let max = Math.min(map.getMaxZoom(), 15);
@@ -356,11 +356,16 @@ var SQL;
 					$('#tile_count').innerText = count;
 					$('#tiles_progress').max = count;
 				});
+
+				$('#tile_zoom').innerText = map.getZoom();
 			}
 
 			f.querySelectorAll('input[type=checkbox]').forEach((e) => e.onchange = calculateTileCount);
 			calculateTileCount();
 			openBottomPanel(f);
+
+			L.DomEvent.on(map, 'zoomend', calculateTileCount);
+			L.DomEvent.on(map, 'moveend', calculateTileCount);
 		}
 		else if (action == 'image')
 		{
