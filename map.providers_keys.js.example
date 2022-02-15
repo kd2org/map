@@ -1,0 +1,8 @@
+// Create a HERE.com API key and append it here
+var HERE_PARAMS = 'lg=FRE&apiKey=';
+
+// Create a Mapbox.com API key and append it
+var MAPBOX_KEY = '';
+
+// Créez une clé d'API IGN et ajoutez-la ici
+var IGN_KEY = '';

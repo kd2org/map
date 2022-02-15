@@ -23,11 +23,6 @@ var providers_categories = {
 		'MapBox.GeographyClass'],
 };
 
-var HERE_PARAMS = 'lg=FRE&apiKey=XHajwacaUq2fmhkzxRebOmDr3ZqG9lEb_foY4lJl0mA';
-var MAPBOX_KEY = 'pk.eyJ1IjoidGVtcGdlb2NlbnQiLCJhIjoiY2l1YTNmenEyMDAwdDJ6cWZxbG55Yjg4OSJ9.QRTz4Pi3096MtXKc_QgpWQ';
-
-var IGN_KEY = 'uxxoph1xphnb8b6iha5y2i8g';
-
 var providers = {
 	/* Principaux */
 	'Haere.Topo': {
