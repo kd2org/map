@@ -159,10 +159,11 @@ var SQL;
 
 		marker.bindPopup(getDefaultMarkerPopup(marker));
 
-		if (label) {
+		if (label !== null) {
 			marker.setIcon(new L.divIcon({className: 'label', html: label, iconSize: null}));
-			marker.exportData = {'label': label};
 		}
+
+		marker.exportData = {'label': label};
 
 		marker.addTo(userOverlay);
 

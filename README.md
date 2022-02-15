@@ -33,3 +33,29 @@ Cet outil utilise des modules Leaflet développés pour l'occasion :
 * Elevation: crée un profil altimétrique en SVG
 
 Vous pouvez réutiliser ces modules sous licence LGPL, n'oubliez juste pas de reverser les modifs :)
+
+## TODO list
+
+* Pouvoir choisir la couleur d'un tracé ou d'une route GPX
+* Export de carte avec les tracés et marqueurs en image
+* Export MBTiles: Prévisualisation d'une tuile pour indiquer le niveau de zoom, dans la sélection de niveaux de zoom
+* Export MBTiles: Mettre à jour le décompte de tuiles quand on change la vue (zoom, pan)
+* Création de tracé sur la carte
+* Modification des tracés sur la carte
+* Suppression d'un seul tracé de la carte
+* Panneau latéral pour lister les tracés et points sur la carte
+* Sauvegarde et restauration de l'état de la carte (via localStorage)
+* Import GPX: gestion des couleurs, des icônes des waypoints
+* Export GPX: stocker la couleur et les icônes des waypoints
+* Impression de carte
+* Ajouter un bouton éditer dans OSM
+* Possibilité de créer des itinéraires avec BRouter/OSRM/YOURS
+* Partage de position sur la carte
+* Possibilité de simplifier le nombre de points d'un tracé
+* Colorisation du tracé selon la pente (inspiré de https://iosphere.github.io/Leaflet.hotline/demo/) en ayant une couleur différente lors des descentes (à la OruxMaps ?)
+* Possibilité d'utiliser des cartes vectorielles : https://gitlab.com/jkuebart/Leaflet.VectorTileLayer/ (EOTopo, MAPBox)
+* Télécharger des cartes vecto en MBTiles pour usage offline ! https://gis.stackexchange.com/questions/217704/vector-tile-formats-vector-mbtiles-and-mvf/217836 (sous Android il y a cette lib : http://mousebird.github.io/WhirlyGlobe/ )
+* Profil coloré : https://github.com/GIScience/Leaflet.Heightgraph
+
+Lisser les traces GPS :
+https://www.gpsvisualizer.com/tutorials/elevation_gain.html

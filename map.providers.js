@@ -315,7 +315,7 @@ var providers = {
 	/* Pays */
 	'NZ.Topo': {
 		label: 'LINZ Topo',
-		tile_url: 'http://{s}.nz.tiles.haere.net/{z}/{x}/{y}.jpg',
+		tile_url: 'https://{s}.nz.tiles.haere.net/{z}/{x}/{y}.jpg',
 		minZoom: 8,
 		maxZoom: 15,
 		maxNativeZoom: 14,
