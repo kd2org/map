@@ -17,5 +17,10 @@ var lang_strings = {
 	'ESRI Roads map': 'Carte routière ESRI',
 	'Stamen Watercolor': 'Stamen Aquarelle',
 	'HERE Hybrid': 'HERE Hybride',
-	'HERE Public transport': 'HERE Transport en commun'
+	'HERE Public transport': 'HERE Transport en commun',
+	'Zoom levels to download': 'Niveaux de zoom à télécharger',
+	'currently shown:': 'zoom affiché :',
+	'Number of tiles to download:': 'Nombre de tuiles à télécharger :',
+	'Export (may take some time)': 'Exporter (peut prendre du temps)',
+	'You can only download up to %d tiles, please select less zoom levels or change to a smaller region.': 'Vous ne pouvez télécharger que jusqu\'à %d tuiles, merci de sélectionner moins de niveaux de zoom ou de sélectionner une région plus petite.'
 };

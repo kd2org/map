@@ -247,6 +247,13 @@ var SQL;
 			}
 		});
 
+		let count = await countTiles(zooms);
+
+		if (count > 2000) {
+			alert(_('You can only download up to %d tiles, please select less zoom levels or change to a smaller region.').replace(/%d/, 2000));
+			return;
+		}
+
 		await loadScript('https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.4.0/dist/sql-wasm.min.js');
 		await loadScript('map.export_tiles.js');
 		SQL = await initSqlJs({
@@ -330,7 +337,8 @@ var SQL;
 				exportTiles(zooms);
 				return false;
 			};
-			f.innerHTML = `<h3>Zooms à télécharger (actuellement affiché : <span id="tile_zoom"></span>)</h3>`;
+
+			f.innerHTML = '<h3>' + _('Zoom levels to download') + ' (' + _('currently shown:') + ' <span id="tile_zoom"></span>)</h3>';
 
 			let min = Math.max(map.getMinZoom(), 6);
 			let max = Math.min(map.getMaxZoom(), 15);
@@ -341,9 +349,9 @@ var SQL;
 				f.innerHTML += c;
 			}
 
-			f.innerHTML += '<p>Nombre de tuiles à télécharger : <span id="tile_count"></span></p>';
-			f.innerHTML += '<input class="btn" type="submit" value="Exporter (peut prendre du temps)" />';
-			f.innerHTML += '<progress value="0" id="tiles_progress" />';
+			f.innerHTML += '<p>' + _('Number of tiles to download:') + ' <span id="tile_count"></span></p>';
+			f.innerHTML += '<input class="btn" type="submit" value="' + _('Export (may take some time)') + '" />';
+			f.innerHTML += `<progress value="0" id="tiles_progress" />`;
 
 			function calculateTileCount() {
 				let zooms = [];
@@ -361,8 +369,8 @@ var SQL;
 			}
 
 			f.querySelectorAll('input[type=checkbox]').forEach((e) => e.onchange = calculateTileCount);
-			calculateTileCount();
 			openBottomPanel(f);
+			calculateTileCount();
 
 			L.DomEvent.on(map, 'zoomend', calculateTileCount);
 			L.DomEvent.on(map, 'moveend', calculateTileCount);
