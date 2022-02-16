@@ -424,7 +424,7 @@ var providers = {
 		tile_url: 'https://wxs.ign.fr/'+IGN_KEY+'/geoportail/wmts?layer={type}&style=normal&tilematrixset=PM&Service=WMTS&Request=GetTile&Version=1.0.0&Format=image%2Fjpeg&TileMatrix={z}&TileCol={x}&TileRow={y}',
 		//tile_url: '//{s}.cache.fr.tiles.map.kd2.org/{type}/{z}/{x}/{y}',
 		type: 'GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN25TOUR',
-		bounds: [[42.3526361615,-4.77666382372], [51.0911090428,8.22608219347]],
+		bounds: [[41.333333, -5.133333], [51.083333, 9.533333]],
 		minZoom: 7,
 		maxZoom: 17,
 		copy: '[[IGN|//www.ign.fr/]]'
@@ -434,7 +434,7 @@ var providers = {
 		tile_url: '//wxs.ign.fr/'+IGN_KEY+'/wmts?LAYER={type}&EXCEPTIONS=text/xml&FORMAT=image/jpeg&SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&STYLE=normal&TILEMATRIXSET=PM&TILEMATRIX={z}&TILECOL={x}&TILEROW={y}',
 		//tile_url: '//{s}.cache.fr.tiles.map.kd2.org/{type}/{z}/{x}/{y}',
 		type: 'GEOGRAPHICALGRIDSYSTEMS.MAPS', //GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN25TOPO.L93
-		bounds: [[42.3526361615,-4.77666382372], [51.0911090428,8.22608219347]],
+		bounds: [[41.333333, -5.133333], [51.083333, 9.533333]],
 		minZoom: 7,
 		maxZoom: 17,
 		copy: '[[IGN|//www.ign.fr/]]'
@@ -444,7 +444,7 @@ var providers = {
 		tile_url: '//wxs.ign.fr/'+IGN_KEY+'/wmts?LAYER={type}&EXCEPTIONS=text/xml&FORMAT=image/jpeg&SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&STYLE=normal&TILEMATRIXSET=PM&TILEMATRIX={z}&TILECOL={x}&TILEROW={y}',
 		//tile_url: '//{s}.cache.fr.tiles.map.kd2.org/{type}/{z}/{x}/{y}',
 		type: 'GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD',
-		bounds: [[42.3526361615,-4.77666382372], [51.0911090428,8.22608219347]],
+		bounds: [[41.333333, -5.133333], [51.083333, 9.533333]],
 		minZoom: 7,
 		maxZoom: 17,
 		copy: '[[IGN|//www.ign.fr/]]'
@@ -452,7 +452,7 @@ var providers = {
 	'FR.IGN.V2': {
 		label: 'IGN GéoPortail Plan v2',
 		tile_url: '//wxs.ign.fr/pratique/wmts?LAYER=GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2&EXCEPTIONS=text/xml&FORMAT=image/png&SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&STYLE=normal&TILEMATRIXSET=PM&TILEMATRIX={z}&TILECOL={x}&TILEROW={y}',
-		bounds: [[42.3526361615,-4.77666382372], [51.0911090428,8.22608219347]],
+		bounds: [[41.333333, -5.133333], [51.083333, 9.533333]],
 		minZoom: 7,
 		maxZoom: 17,
 		copy: '[[IGN|//www.ign.fr/]]'
@@ -460,7 +460,7 @@ var providers = {
 	'FR.OSM': {
 		label: 'OpenStreetMap France',
 		tile_url: '//a.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',
-		bounds: [[42.3526361615,-4.77666382372], [51.0911090428,8.22608219347]],
+		bounds: [[41.333333, -5.133333], [51.083333, 9.533333]],
 		minZoom: 5,
 		source: '[[OpenStreetMap France|//tile.openstreetmap.fr/]]',
 		copy: '[[OSM|//www.openstreetmap.org/]] contributors'
@@ -468,7 +468,7 @@ var providers = {
 	'FR.TOPEN25': {
 		label: 'TOpen25',
 		tile_url: '//osm.cquest.org/topen25@x2/{z}/{x}/{y}.png',
-		bounds: [[42.3526361615,-4.77666382372], [51.0911090428,8.22608219347]],
+		bounds: [[41.333333, -5.133333], [51.083333, 9.533333]],
 		minZoom: 15,
 		maxZoom: 15,
 		source: 'Rendu TOPen25 by cquest (CC-BY-SA), données IGN BDTopo 2020-09 / BDAlti (LO)'
@@ -589,6 +589,7 @@ var providers = {
 France = -5.133333	41.333333	9.533333	51.083333
 min_lon	min_lat	max_lon	max_lat
 => leaflet format: [[min_lat, min_lon], [max_lat, max_lon]]
+=> bounds: [[41.333333, -5.133333], [51.083333, 9.533333]],
 
 Findin other country bounds: //wiki.openstreetmap.org/wiki/User:Ewmjc/Country_bounds
 */
