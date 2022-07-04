@@ -125,8 +125,14 @@ L.GPX = L.FeatureGroup.extend({
 
 				var p = new L.Marker(new L.LatLng(point.lat, point.lon, point.ele), opt);
 
-				var desc = (point.name ? '<h3>' + point.name + '</h3>' : '')
-					+ (point.desc && point.desc != point.name ? '<p>' + point.desc + '</p>' : '');
+				var desc = point.desc;
+
+				if (desc.indexOf('<') == -1) {
+					desc = desc.replace(/(\r\n|\n)/g, '<br />');
+				}
+
+				desc = (point.name ? '<h3>' + point.name + '</h3>' : '')
+					+ (desc && desc != point.name ? '<p>' + desc + '</p>' : '');
 
 				desc = desc + "<input type='text' onclick='this.select();' value='" + point.lat + ' ' + point.lon + "' />";
 
