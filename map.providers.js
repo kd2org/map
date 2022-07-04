@@ -326,20 +326,20 @@ var providers = {
 	},
 	'AU.Base': {
 		'label': 'Geoscience Base',
-		'tile_url': 'http://gaservices.ga.gov.au/site_7/rest/services/NationalMap_Colour_Topographic_Base_World_WM/MapServer/tile/{z}/{y}/{x}',
+		'tile_url': 'https://services.ga.gov.au/gis/rest/services/NationalBaseMap/MapServer/tile/{z}/{y}/{x}',
 		'minZoom': 1,
 		'maxZoom': 16,
 		'bounds': [[-43.6480550261,113.224427389],[-10.7097180211,153.606000214]],
-		'copy': '[[Copyleft Geoscience|//gaservices.ga.gov.au/site_7/rest/services/NationalMap_Colour_Topographic_Base_World_WM/MapServer]]'
+		'copy': '[[Copyleft Geoscience|https://services.ga.gov.au/gis/rest/services/NationalBaseMap/MapServer/legend]]'
 	},
 	'AU.Topo': {
 		'label': 'Geoscience Topo 1:150,000',
-		'tile_url': 'http://gaservices.ga.gov.au/site_7/rest/services/Topographic_Base_Map_WM/MapServer/tile/{z}/{y}/{x}',
+		'tile_url': 'https://services.ga.gov.au/gis/rest/services/Topographic_Base_Map/MapServer/tile/{z}/{y}/{x}',
 		'minZoom': 1,
 		'maxZoom': 12,
 		'bounds': [[-43.6480550261,113.224427389],[-10.7097180211,153.606000214]],
 		'copy': '[[Copyleft Geoscience|//gaservices.ga.gov.au/site_7/rest/services/Topographic_Base_Map_WM/MapServer]]',
-		'legend_url': '//gaservices.ga.gov.au/site_7/rest/services/Topographic_Base_Map_WM/MapServer/legend'
+		'legend_url': 'https://services.ga.gov.au/gis/rest/services/Topographic_Base_Map/MapServer/legend'
 	},
 	'AU.HEMA': {
 		'label': 'HEMA',
