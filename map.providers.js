@@ -7,12 +7,12 @@ var providers_categories = {
 	'Public transport': ['Thunderforest.Transport', 'HERE.Transit'],
 	'Spain': ['ES.IGN'],
 	'Italy': ['IT.IGMI'],
-	'France': ['Haere.Topo', 'FR.IGN', 'FR.IGN.TOPO', 'FR.IGN.V2', 'FR.IGN.SCANEXPRESS', 'FR.OSM', 'FR.TOPEN25'],
-	'Australia': ['Haere.Topo', 'AU.Base', 'AU.Topo', 'AU.HEMA', 'AU.EOTopo', 'AU.NSW.Base', 'AU.NSW.Topo', 'AU.NSW.Aerial',
+	'France': ['FR.IGN', 'FR.IGN.TOPO', 'FR.IGN.V2', 'FR.IGN.SCANEXPRESS', 'FR.OSM', 'FR.TOPEN25'],
+	'Australia': ['AU.Base', 'AU.Topo', 'AU.HEMA', 'AU.EOTopo', 'AU.NSW.Base', 'AU.NSW.Topo', 'AU.NSW.Aerial',
 		"AU.SA.Topo",
 		'AU.TAS.Scan', 'AU.TAS.Topo', 'AU.TAS.Aerial',
 		'AU.VIC.Mapscape'],
-	'New Zealand': ['Haere.Topo', 'NZ.Topo'],
+	'New Zealand': ['NZ.Topo'],
 	'Denmark': ['DK.Topo', 'DK.Topo2', 'DK.Topo3', 'DK.Topo4', 'DK.Topo5'],
 	'Sweden': ['SE.Topo', 'SE.Mountain', 'SE.Hitta', 'SE.Hitta2', 'SE.HittaSat'],
 	'Finland': ['FI.Topo', 'FI.Simplified', 'FI.Satellite'],
@@ -24,16 +24,6 @@ var providers_categories = {
 };
 
 var providers = {
-	/* Principaux */
-	'Haere.Topo': {
-		label: 'Topo hære.net',
-		tile_url: 'http://{s}.topo.tiles.map.kd2.org/{z}/{x}/{y}',
-		source: '[[hære.net|//haere.net/]]',
-		copy: '[[OpenStreetMap|//www.openstreetmap.org/]] &amp; [[OpenAndroMaps|//www.openandromaps.org/en/]]',
-		legend_url: '/legend/',
-		minZoom: 10,
-		maxZoom: 16
-	},
 	'Local': {
 		label: 'Local Mapsforge tile server',
 		tile_url: '//localhost:6090/{z}/{x}/{y}'
@@ -315,7 +305,7 @@ var providers = {
 	/* Pays */
 	'NZ.Topo': {
 		label: 'LINZ Topo',
-		tile_url: 'https://{s}.nz.tiles.haere.net/{z}/{x}/{y}.jpg',
+		tile_url: 'https://nztiles.haere.net/{z}/{x}/{y}.jpg',
 		minZoom: 8,
 		maxZoom: 15,
 		maxNativeZoom: 14,
@@ -348,7 +338,7 @@ var providers = {
 	},
 	'AU.EOTopo': {
 		label: 'EOTopo',
-		tile_url: 'http://{s}.cache.au.tiles.map.kd2.org/{z}/{x}/{y}',
+		tile_url: 'http://au-maptiles.kd2.org/{z}/{x}/{y}',
 		maxZoom: 13,
 		bounds: [[-43.6480550261,113.224427389],[-10.7097180211,153.606000214]],
 		copy: 'I.T. Beyond Pty Ltd',
@@ -422,7 +412,6 @@ var providers = {
 	'FR.IGN': {
 		label: 'IGN GéoPortail SCAN25 Touristique',
 		tile_url: 'https://wxs.ign.fr/'+IGN_KEY+'/geoportail/wmts?layer={type}&style=normal&tilematrixset=PM&Service=WMTS&Request=GetTile&Version=1.0.0&Format=image%2Fjpeg&TileMatrix={z}&TileCol={x}&TileRow={y}',
-		//tile_url: '//{s}.cache.fr.tiles.map.kd2.org/{type}/{z}/{x}/{y}',
 		type: 'GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN25TOUR',
 		bounds: [[41.333333, -5.133333], [51.083333, 9.533333]],
 		minZoom: 7,
@@ -432,7 +421,6 @@ var providers = {
 	'FR.IGN.TOPO': {
 		label: 'IGN GéoPortail SCAN25 Topo',
 		tile_url: '//wxs.ign.fr/'+IGN_KEY+'/wmts?LAYER={type}&EXCEPTIONS=text/xml&FORMAT=image/jpeg&SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&STYLE=normal&TILEMATRIXSET=PM&TILEMATRIX={z}&TILECOL={x}&TILEROW={y}',
-		//tile_url: '//{s}.cache.fr.tiles.map.kd2.org/{type}/{z}/{x}/{y}',
 		type: 'GEOGRAPHICALGRIDSYSTEMS.MAPS', //GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN25TOPO.L93
 		bounds: [[41.333333, -5.133333], [51.083333, 9.533333]],
 		minZoom: 7,
@@ -442,7 +430,6 @@ var providers = {
 	'FR.IGN.SCANEXPRESS': {
 		label: 'IGN GéoPortail Scan Express',
 		tile_url: '//wxs.ign.fr/'+IGN_KEY+'/wmts?LAYER={type}&EXCEPTIONS=text/xml&FORMAT=image/jpeg&SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&STYLE=normal&TILEMATRIXSET=PM&TILEMATRIX={z}&TILECOL={x}&TILEROW={y}',
-		//tile_url: '//{s}.cache.fr.tiles.map.kd2.org/{type}/{z}/{x}/{y}',
 		type: 'GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD',
 		bounds: [[41.333333, -5.133333], [51.083333, 9.533333]],
 		minZoom: 7,
