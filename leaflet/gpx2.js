@@ -127,7 +127,7 @@ L.GPX = L.FeatureGroup.extend({
 
 				var desc = point.desc;
 
-				if (desc.indexOf('<') == -1) {
+				if (desc && desc.indexOf('<') == -1) {
 					desc = desc.replace(/(\r\n|\n)/g, '<br />');
 				}
 
