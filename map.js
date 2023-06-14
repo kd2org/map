@@ -382,19 +382,19 @@ var SQL;
 		else if (action == 'refuges')
 		{
 			var bbox = map.getBounds();
-			var l = 'https://www.refuges.info/api/bbox?bbox=' + bbox.toBBoxString() + '&format=gpx&format_texte=texte&nb_points=500';
+			var l = 'https://www.refuges.info/api/bbox?bbox=' + bbox.toBBoxString() + '&format=gpx&format_texte=texte&nb_points=1500';
 			window.open(l);
 		}
 		else if (action == 'tout sauf refuges')
 		{
 			var bbox = map.getBounds();
-			var l = 'https://www.refuges.info/api/bbox?bbox=' + bbox.toBBoxString() + '&format=gpx&format_texte=texte&nb_points=500&types_points=pt_eau,sommet,pt_passage,bivouac,lac';
+			var l = 'https://www.refuges.info/api/bbox?bbox=' + bbox.toBBoxString() + '&format=gpx&format_texte=texte&nb_points=1500&types_points=pt_eau,sommet,pt_passage,bivouac,lac';
 			window.open(l);
 		}
 		else if (action == 'refuges seulement')
 		{
 			var bbox = map.getBounds();
-			var l = 'https://www.refuges.info/api/bbox?bbox=' + bbox.toBBoxString() + '&format=gpx&format_texte=texte&nb_points=500&type_points=cabane,refuge,gite';
+			var l = 'https://www.refuges.info/api/bbox?bbox=' + bbox.toBBoxString() + '&format=gpx&format_texte=texte&nb_points=1500&type_points=cabane,refuge,gite';
 			window.open(l);
 		}
 
