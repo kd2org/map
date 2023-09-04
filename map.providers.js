@@ -30,7 +30,7 @@ var providers = {
 	},
 	'OSM': {
 		label: 'OpenStreetMap',
-		tile_url: '//{s}.tile.osm.org/{z}/{x}/{y}.png',
+		tile_url: '//tile.openstreetmap.org/{z}/{x}/{y}.png',
 		source: '[[OpenStreetMap|//www.openstreetmap.org/]]',
 		copy: '[[OSM|//www.openstreetmap.org/]] contributors'
 	},
