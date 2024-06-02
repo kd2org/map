@@ -10,6 +10,7 @@ Ceci est un outil de cartographie pour la randonnée, permettant de :
 * enregistrer les données ajoutées sur la carte en GPX
 * fusionner des traces et routes GPX (charger plusieurs traces sur la carte, puis enregistrer)
 * sauvegarde de la carte visible en fichier MBTiles à plusieurs niveaux de zoom (ne fonctionne qu'avec les fournisseurs qui fournissent un entête HTTP `access-control-allow-origin: *`)
+* sauvegarde de la carte visible sous forme d'image à plusieurs niveaux de zoom (même restriction que pour MBTiles)
 * profil altimétrique des traces GPX affichées
 * export HTML de la carte visualisée, avec les tracés dessus
 * mesure de distance sur la carte
