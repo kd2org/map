@@ -4,7 +4,7 @@ L.exportTiles = async function (format, layer, bounds, levels, progress_callback
 		return;
 	}
 
-	for (var z = Math.min(levels); z <= Math.max(levels); z++) {
+	levels.forEach(async z => {
 		// Create canvas
 		let tiles = getTiles(layer, bounds, [z]);
 		var w = 0, h = 0, max_col = 0, min_row, min_col, max_row = 0;
@@ -54,7 +54,7 @@ L.exportTiles = async function (format, layer, bounds, levels, progress_callback
 		delete canvas, a, blob;
 
 		setTimeout(() => window.URL.revokeObjectURL(url), 1000);
-	}
+	});
 
 	return;
 
