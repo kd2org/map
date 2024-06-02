@@ -36,7 +36,7 @@
 			let script = scripts[url] = document.createElement('script');
 			script.type = 'text/javascript';
 			script.async = true;
-			script.src = url ? '?2024';
+			script.src = url + '?2024';
 			script.onload = () => resolve(script);
 			document.head.appendChild(script);
 		});
