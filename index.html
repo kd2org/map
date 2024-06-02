@@ -55,8 +55,8 @@
         <button type="button" value="refuges" title="Tous les points de refuges.info">GPX Refuges.info</button>
         <button type="button" value="tout sauf refuges" title="Tous les points de Refuges.info, sauf les refuges">GPX tout sauf refuges</button>
         <button type="button" value="refuges seulement" title="Tous les refuges de Refuges.info">GPX refuges uniquement</button>
-        <button type="button" value="landez" title="Script Python Landez pour créer un MBTiles">Landez MBTiles</button>
-        <button type="button" value="export" title="Exporter la zone en MBTiles">Export MBTiles</button>
+        <!--<button type="button" value="landez" title="Script Python Landez pour créer un MBTiles">Landez MBTiles</button>-->
+        <button type="button" value="export" title="Exporter la zone">Export</button>
         <button type="button" value="google" title="Ouvrir dans Google Maps">Google Maps</button>
         <button type="button" value="osm" title="Ouvrir dans OSM">OpenStreetMap</button>
     </div>
@@ -94,10 +94,10 @@ lang = lang.substr(0, 2).toLowerCase();
 if (lang == 'fr')
 {
     // Blocking loading as we need to have language strings before loading the app
-    document.write("<script type=\"text/javascript\" src=\"lang.fr.js?2021\" charset=\"utf-8\"><\/script>");
+    document.write("<script type=\"text/javascript\" src=\"lang.fr.js?2024\" charset=\"utf-8\"><\/script>");
 }
 </script>
-<script src="map.js?2022" type="text/javascript" charset="utf-8"></script>
+<script src="map.js?2024" type="text/javascript" charset="utf-8"></script>
 
 <template id="markerPopupEdit">
     <form>

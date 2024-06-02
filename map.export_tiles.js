@@ -1,4 +1,87 @@
+L.exportTiles = async function (format, layer, bounds, levels, progress_callback) {
+	if (format === 'mbtiles') {
+		await L.exportMBTiles(layer, bounds, levels, progress_callback);
+		return;
+	}
+
+	for (var z = Math.min(levels); z <= Math.max(levels); z++) {
+		// Create canvas
+		let tiles = getTiles(layer, bounds, [z]);
+		var w = 0, h = 0, max_col = 0, min_row, min_col, max_row = 0;
+		var canvas, ctx;
+
+		try {
+			for (const tile of tiles) {
+				min_col = Math.min(tile.x, min_col ?? tile.x);
+				max_col = Math.max(tile.x, max_col);
+				min_row = Math.min(tile.y, min_row ?? tile.y);
+				max_row = Math.max(tile.y, max_row);
+			}
+
+			for (const tile of tiles) {
+				let img = await loadImage(tile.url);
+				let w = img.width, h = img.height;
+
+				if (!canvas) {
+					canvas = document.createElement('canvas');
+					canvas.width = w * (max_col - min_col + 1);
+					canvas.height = h * (max_row - min_row + 1);
+					ctx = canvas.getContext('2d');
+				}
+
+				ctx.drawImage(img, w * (tile.x - min_col), h * (tile.y - min_row));
+
+				delete img;
+			}
+		}
+		catch {
+			window.alert('Une erreur est survenue, cette carte n\'autorise peut-être pas le téléchargement ?');
+			return;
+		}
+		finally {
+			delete tiles, ctx;
+		}
+
+		const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/' + format, 0.9));
+		let url = window.URL.createObjectURL(blob);
+
+		let a = document.createElement('a');
+		document.body.appendChild(a);
+		a.href = url;
+		a.download = 'map_z' + z + '.' + format;
+		a.click();
+
+		delete canvas, a, blob;
+
+		setTimeout(() => window.URL.revokeObjectURL(url), 1000);
+	}
+
+	return;
+
+	async function loadImage(url) {
+		const img = document.createElement('img');
+		img.crossOrigin = 'anonymous';
+		return new Promise((resolve, reject) => {
+			img.onload = () => {
+				resolve(img);
+			};
+			img.onerror = () => {
+				throw 'Unable to load image';
+			};
+			img.src = url;
+		});
+	}
+};
+
 L.exportMBTiles = async function (layer, bounds, levels, progress_callback) {
+	await loadScript('https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.4.0/dist/sql-wasm.min.js');
+	await loadScript('map.export_tiles.js');
+	SQL = await initSqlJs({
+		// Required to load the wasm binary asynchronously. Of course, you can host it wherever you want
+		// You can omit locateFile completely when running in node
+		locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.4.0/dist/${file}`
+	});
+
 	let db = new SQL.Database();
 	db.run('CREATE TABLE tiles (zoom_level integer, tile_column integer, tile_row integer, tile_data blob); '
 		+ 'CREATE INDEX tiles_idx on tiles (zoom_level, tile_column, tile_row); '
@@ -72,6 +155,24 @@ L.exportMBTiles = async function (layer, bounds, levels, progress_callback) {
 			stmt.run({':zoom': tile.z, ':col': tile.x, ':row': flipped_y, ':data': new Uint8Array(r)});
 			progress_callback();
 		}
+	}
+
+	function loadScript(url) {
+		const scripts = [];
+
+		return new Promise((resolve) => {
+			if (url in scripts) {
+				resolve(scripts[url]);
+				return;
+			}
+
+			let script = scripts[url] = document.createElement('script');
+			script.type = 'text/javascript';
+			script.async = true;
+			script.src = url;
+			script.onload = () => resolve(script);
+			document.head.appendChild(script);
+		});
 	}
 };
 
@@ -183,4 +284,5 @@ function getTiles(layer, bounds, zooms) {
 	function tiled(num) {
 		return Math.floor(num/256);
 	}
+
 }

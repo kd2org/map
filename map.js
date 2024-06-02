@@ -1,5 +1,3 @@
-var SQL;
-
 (function () {
 	var layers = {};
 	var scripts = {};
@@ -19,7 +17,7 @@ var SQL;
 		}
 		else {
 			var s = scripts[url] =  document.createElement('script');
-			s.src = url + (url.indexOf('?') == -1 ? '?' : '&') + '2020';
+			s.src = url + (url.indexOf('?') == -1 ? '?' : '&') + '2024';
 			s.async = true;
 			s.defer = true;
 			s.onload = callback;
@@ -38,7 +36,7 @@ var SQL;
 			let script = scripts[url] = document.createElement('script');
 			script.type = 'text/javascript';
 			script.async = true;
-			script.src = url;
+			script.src = url ? '?2024';
 			script.onload = () => resolve(script);
 			document.head.appendChild(script);
 		});
@@ -237,7 +235,7 @@ var SQL;
 		}
 	};
 
-	async function exportTiles(zooms) {
+	async function exportTiles(format, zooms) {
 		let layer;
 
 		map.eachLayer((l2) => {
@@ -254,17 +252,9 @@ var SQL;
 			return;
 		}
 
-		await loadScript('https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.4.0/dist/sql-wasm.min.js');
-		await loadScript('map.export_tiles.js');
-		SQL = await initSqlJs({
-			// Required to load the wasm binary asynchronously. Of course, you can host it wherever you want
-			// You can omit locateFile completely when running in node
-			locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.4.0/dist/${file}`
-		});
-
 		document.body.className = 'loading';
 		let progress = $('#tiles_progress');
-		await L.exportMBTiles(layer, map.getBounds(), zooms, () => {
+		await L.exportTiles(format, layer, map.getBounds(), zooms, () => {
 			progress.value = parseInt(progress.value)+1;
 		});
 		document.body.className = '';
@@ -299,6 +289,7 @@ var SQL;
 			let url = 'http://www.openstreetmap.org/?zoom=' + map.getZoom() + '&lat=' + ll.lat + '&lon=' + ll.lng;
 			window.open(url);
 		}
+		/*
 		else if (action == 'landez')
 		{
 			let l;
@@ -322,6 +313,7 @@ var SQL;
 			c.value = code;
 			openBottomPanel(c);
 		}
+		*/
 		else if (action == 'export')
 		{
 			// Export current map to MBTiles
@@ -334,11 +326,13 @@ var SQL;
 					zooms.push(e.value);
 				});
 
-				exportTiles(zooms);
+				exportTiles(f.format.value.toLowerCase(), zooms);
 				return false;
 			};
 
-			f.innerHTML = '<h3>' + _('Zoom levels to download') + ' (' + _('currently shown:') + ' <span id="tile_zoom"></span>)</h3>';
+			f.innerHTML += '<h3>' + _('Export format') + '</h3>';
+			f.innerHTML += '<p><select name="format"><option>MBTiles</option><option>WebP</option><option>PNG</option><option>JPEG</option></select></p>';
+			f.innerHTML += '<h3>' + _('Zoom levels to download') + ' (' + _('currently shown:') + ' <span id="tile_zoom"></span>)</h3>';
 
 			let min = Math.max(map.getMinZoom(), 6);
 			let max = Math.min(map.getMaxZoom(), 15);
