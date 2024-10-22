@@ -7,7 +7,7 @@ var providers_categories = {
 	'Public transport': ['Thunderforest.Transport', 'HERE.Transit'],
 	'Spain': ['ES.IGN'],
 	'Italy': ['IT.IGMI'],
-	'France': ['FR.IGN', 'FR.IGN.TOPO', 'FR.IGN.V2', 'FR.IGN.SCANEXPRESS', 'FR.OSM', 'FR.TOPEN25'],
+	'France': ['FR.IGN', 'FR.IGN.TOPO', 'FR.IGN.V2', 'FR.IGN.SCANEXPRESS', 'FR.IGN.PHOTOS', 'FR.OSM', 'FR.TOPEN25'],
 	'Australia': ['AU.Base', 'AU.Topo', 'AU.HEMA', 'AU.EOTopo', 'AU.NSW.Base', 'AU.NSW.Topo', 'AU.NSW.Aerial',
 		"AU.SA.Topo",
 		'AU.TAS.Scan', 'AU.TAS.Topo', 'AU.TAS.Aerial',
@@ -410,8 +410,8 @@ var providers = {
 		bounds: [[-40.9633, 135.1868], [-29.5926, 157.5989]]
 	},
 	'FR.IGN': {
-		label: 'IGN GéoPortail SCAN25 Touristique',
-		tile_url: 'https://wxs.ign.fr/'+IGN_KEY+'/geoportail/wmts?layer={type}&style=normal&tilematrixset=PM&Service=WMTS&Request=GetTile&Version=1.0.0&Format=image%2Fjpeg&TileMatrix={z}&TileCol={x}&TileRow={y}',
+		label: 'IGN GéoPortail SCAN25 (uniquement)',
+		tile_url: '//data.geopf.fr/private/wmts?layer={type}&apikey=ign_scan_ws&style=normal&tilematrixset=PM&Service=WMTS&Request=GetTile&Version=1.0.0&Format=image%2Fjpeg&TileMatrix={z}&TileCol={x}&TileRow={y}',
 		type: 'GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN25TOUR',
 		bounds: [[41.333333, -5.133333], [51.083333, 9.533333]],
 		minZoom: 7,
@@ -419,8 +419,8 @@ var providers = {
 		copy: '[[IGN|//www.ign.fr/]]'
 	},
 	'FR.IGN.TOPO': {
-		label: 'IGN GéoPortail SCAN25 Topo',
-		tile_url: '//wxs.ign.fr/'+IGN_KEY+'/wmts?LAYER={type}&EXCEPTIONS=text/xml&FORMAT=image/jpeg&SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&STYLE=normal&TILEMATRIXSET=PM&TILEMATRIX={z}&TILECOL={x}&TILEROW={y}',
+		label: 'IGN GéoPortail SCAN25 (+ autres échelles)',
+		tile_url: '//data.geopf.fr/private/wmts?layer={type}&apikey=ign_scan_ws&EXCEPTIONS=text/xml&FORMAT=image/jpeg&SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&STYLE=normal&TILEMATRIXSET=PM&TILEMATRIX={z}&TILECOL={x}&TILEROW={y}',
 		type: 'GEOGRAPHICALGRIDSYSTEMS.MAPS', //GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN25TOPO.L93
 		bounds: [[41.333333, -5.133333], [51.083333, 9.533333]],
 		minZoom: 7,
@@ -429,7 +429,7 @@ var providers = {
 	},
 	'FR.IGN.SCANEXPRESS': {
 		label: 'IGN GéoPortail Scan Express',
-		tile_url: '//wxs.ign.fr/'+IGN_KEY+'/wmts?LAYER={type}&EXCEPTIONS=text/xml&FORMAT=image/jpeg&SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&STYLE=normal&TILEMATRIXSET=PM&TILEMATRIX={z}&TILECOL={x}&TILEROW={y}',
+		tile_url: '//data.geopf.fr/private/wmts?layer={type}&apikey=ign_scan_ws&EXCEPTIONS=text/xml&FORMAT=image/jpeg&SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&STYLE=normal&TILEMATRIXSET=PM&TILEMATRIX={z}&TILECOL={x}&TILEROW={y}',
 		type: 'GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD',
 		bounds: [[41.333333, -5.133333], [51.083333, 9.533333]],
 		minZoom: 7,
@@ -438,10 +438,19 @@ var providers = {
 	},
 	'FR.IGN.V2': {
 		label: 'IGN GéoPortail Plan v2',
-		tile_url: '//wxs.ign.fr/pratique/wmts?LAYER=GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2&EXCEPTIONS=text/xml&FORMAT=image/png&SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&STYLE=normal&TILEMATRIXSET=PM&TILEMATRIX={z}&TILECOL={x}&TILEROW={y}',
+		tile_url: '//data.geopf.fr/private/wmts?layer={type}&apikey=ign_scan_ws&EXCEPTIONS=text/xml&FORMAT=image/png&SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&STYLE=normal&TILEMATRIXSET=PM&TILEMATRIX={z}&TILECOL={x}&TILEROW={y}',
+		type: 'GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2',
 		bounds: [[41.333333, -5.133333], [51.083333, 9.533333]],
 		minZoom: 7,
 		maxZoom: 17,
+		copy: '[[IGN|//www.ign.fr/]]'
+	},
+	'FR.IGN.PHOTOS': {
+		label: 'IGN OrthoPhoto',
+		tile_url: 'https://wms.openstreetmap.fr/tms/1.0.0/orthohr/{z}/{x}/{y}',
+		bounds: [[41.333333, -5.133333], [51.083333, 9.533333]],
+		minZoom: 3,
+		maxZoom: 19,
 		copy: '[[IGN|//www.ign.fr/]]'
 	},
 	'FR.OSM': {
