@@ -446,10 +446,10 @@ var providers = {
 		copy: '[[IGN|//www.ign.fr/]]'
 	},
 	'FR.IGN.PHOTOS': {
-		label: 'IGN OrthoPhoto',
-		tile_url: 'https://wms.openstreetmap.fr/tms/1.0.0/orthohr/{z}/{x}/{y}',
+		label: 'IGN BD Ortho',
+		tile_url: 'https://data.geopf.fr/tms/1.0.0/ORTHOIMAGERY.ORTHOPHOTOS/{z}/{x}/{y}.jpeg',
 		bounds: [[41.333333, -5.133333], [51.083333, 9.533333]],
-		minZoom: 3,
+		minZoom: 7,
 		maxZoom: 19,
 		copy: '[[IGN|//www.ign.fr/]]'
 	},
