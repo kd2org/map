@@ -247,8 +247,8 @@
 
 		let count = await countTiles(zooms);
 
-		if (count > 2000) {
-			alert(_('You can only download up to %d tiles, please select less zoom levels or change to a smaller region.').replace(/%d/, 2000));
+		if (count > 10000) {
+			alert(_('You can only download up to %d tiles, please select less zoom levels or change to a smaller region.').replace(/%d/, 10000));
 			return;
 		}
 

@@ -19,7 +19,15 @@ L.exportTiles = async function (format, layer, bounds, levels, progress_callback
 			}
 
 			for (const tile of tiles) {
-				let img = await loadImage(tile.url);
+				let img;
+
+				try {
+					img = await loadImage(tile.url);
+				}
+				catch (e) {
+					continue;
+				}
+
 				let w = img.width, h = img.height;
 
 				if (!canvas) {
@@ -33,10 +41,6 @@ L.exportTiles = async function (format, layer, bounds, levels, progress_callback
 
 				delete img;
 			}
-		}
-		catch {
-			window.alert('Une erreur est survenue, cette carte n\'autorise peut-être pas le téléchargement ?');
-			return;
 		}
 		finally {
 			delete tiles, ctx;
@@ -66,7 +70,7 @@ L.exportTiles = async function (format, layer, bounds, levels, progress_callback
 				resolve(img);
 			};
 			img.onerror = () => {
-				throw 'Unable to load image';
+				reject('Unable to load image');
 			};
 			img.src = url;
 		});
@@ -223,7 +227,7 @@ function getTiles(layer, bounds, zooms) {
 			var value = data[key];
 
 			if (value === undefined) {
-				throw new Error('No value provided for variable ' + str);
+				throw Error('No value provided for variable ' + str);
 
 			} else if (typeof value === 'function') {
 				value = value(data);
